@@ -1,0 +1,26 @@
+project_name: scs-migrate
+before:
+  hooks:
+    - go mod download
+builds:
+- env:
+  - CGO_ENABLED=0
+  goos:
+    - darwin
+    - windows
+    - linux
+  goarch:
+    - amd64
+archives:
+- files:
+  - none* # only the binaries
+release:
+  github:
+    owner: zmb3
+    name: scs-migrate
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'

@@ -32,6 +32,12 @@ const (
 	SafeIcon    = "✅"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 type checker struct {
 	client         *cfclient.Client
 	appsByGUID     map[string]cfclient.App
@@ -131,6 +137,13 @@ func main() {
 	password := flag.String("password", "", "Cloud Foundry API Password.  May also be provided via the $PASSWORD variable")
 	insecure := flag.Bool("insecure", false, "do not validate TLS connections")
 	flag.Parse()
+
+	for _, arg := range flag.Args() {
+		if arg == "version" {
+			fmt.Printf("%v, commit %v, built at %v\n", version, commit, date)
+			return
+		}
+	}
 
 	if len(*password) == 0 {
 		*password = os.Getenv("PASSWORD")
