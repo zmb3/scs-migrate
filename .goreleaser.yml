@@ -11,9 +11,6 @@ builds:
     - linux
   goarch:
     - amd64
-archives:
-- files:
-  - none* # only the binaries
 release:
   github:
     owner: zmb3

@@ -1,5 +1,7 @@
 # SCS Migrate
 
+[![Build Status](https://travis-ci.com/zmb3/scs-migrate.svg?token=rV9CBTWmzXChoM9GCTab&branch=master)](https://travis-ci.com/zmb3/scs-migrate)
+
 A tool to help you migrate the Spring Cloud Services tile
 from version 2.x to version 3.x.
 
