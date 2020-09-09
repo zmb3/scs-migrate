@@ -40,6 +40,7 @@ var (
 
 type checker struct {
 	client         *cfclient.Client
+	log            *log.Logger
 	appsByGUID     map[string]cfclient.App
 	orgNamesByGUID map[string]string
 }
@@ -163,7 +164,10 @@ func main() {
 		log.Fatalf("could not create API client: %v", err)
 	}
 
-	c := &checker{client: client}
+	c := &checker{
+		client: client,
+		log:    log.New(os.Stdout, "", log.Lshortfile|log.Ltime),
+	}
 	if err := c.populateOrgsAndApps(); err != nil {
 		log.Fatal(err)
 	}

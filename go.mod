@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	github.com/Masterminds/semver v1.5.0 // indirect
-	github.com/cloudfoundry-community/go-cfclient v0.0.0-20200407215044-65aee82ffa7b
+	github.com/cloudfoundry-community/go-cfclient v0.0.0-20200413172050-18981bf12b4b
 	github.com/fatih/color v1.9.0
 	github.com/golang/protobuf v1.3.5 // indirect
 	github.com/gosuri/uilive v0.0.4 // indirect
